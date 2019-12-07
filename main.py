@@ -10,11 +10,11 @@ trainFile = "./data/train.csv"
 testFile = "./data/test.csv"
 
 
-def loadData(file):
+def loadData(file, l=0):
     data = []
     label = []
     with open(file, 'r') as f:
-        lines = f.readlines()[1:]
+        lines = f.readlines()[1:l]
         for line in lines:
             allCols = line.split(",")
             label.append(int(allCols[0]))
@@ -24,13 +24,14 @@ def loadData(file):
 
 ### load data and train model
 def main():
-    trainData, trainLabel = loadData(trainFile)
-    k = 4
-    
+    trainData, trainLabel = loadData(trainFile, 1000)
+    k = 8
+    print("Train data loaded!", len(trainData))
     model = KNeighborsClassifier(n_neighbors=k)
     model.fit(trainData, trainLabel)
     
-    testData, testLabel = loadData(testFile)
+    testData, testLabel = loadData(testFile, 1000)
+    print("Test data loaded!", len(testData))
     
     print(model.score(testData, testLabel))
     
