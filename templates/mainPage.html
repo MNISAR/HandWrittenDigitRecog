@@ -45,16 +45,10 @@
         document.getElementById("canvasimg").style.display = "none";
     }
     
-    function prepareImg() {
-   		var canvas = document.getElementById('can');
-   		document.getElementById('inp_img').src = canvas.toDataURL();
-	}
-
     function getImage() {
-    	prepareImg();
-        document.getElementById("canvasimg").style.border = "2px solid";
-        var dataURL = canvas.toDataURL();
-        document.getElementById("canvasimg").src = dataURL;
+    	var canvas = document.getElementById('can');
+   		document.getElementById('inp_img').value = canvas.toDataURL();
+   		alert();
     }
     
     function findxy(res, e) {
@@ -96,15 +90,16 @@
     </head>
     
     <body onload="init()">
-	    <form action="process_request" method="POST" onsubmit="submit()">
+	    <form action="process_request" method="POST" onsubmit="getImage()" name="canvas">
         	<canvas id="can" width="280" height="280" style="top:10%;left:10%;border:2px solid;"></canvas>
         	<img id="canvasimg" style="top:10%;left:52%;" style="display:none;">
 	        <br>
-	        <img src='' display='none' id='inp_img'>
-	        <button type="submit" id="btn" onclick="getImage()">Submit</button>
+	        <!--<img src='' display='none' id='inp_img' name='imagefile'>-->
+	        <input type="hidden" value="" name="imagefile" id='inp_img'>
+	        <button type="submit" id="btn">Submit</button>
 	        <input type="button" value="clear" id="clr" size="23" onclick="erase()">
 	    </form>
-    	<img src='reference_image.jpg' style='display: none' alt="reference_image" id='referenceImage'>
+    	<img src='/static/reference_image.jpg' style='display: none' alt="reference_image" id='referenceImage'>
     </body>
     </html>
 

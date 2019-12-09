@@ -19,6 +19,7 @@ label = df['label']
 test = df.drop(['label']).to_numpy()
 test = test.reshape((28, 28))
 test = test.astype('int8')
+
 from PIL import Image
 img = Image.fromarray(test)
 imagebox = img.getbbox()
