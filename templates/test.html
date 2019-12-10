@@ -1,6 +1,5 @@
-
 <html>
-    <script type="text/javascript">
+	<script type="text/javascript">
 	    var canvas, ctx, flag = false,
 	        prevX = 0,
 	        currX = 0,
@@ -47,10 +46,9 @@
     
     function getImage() {
     	var canvas = document.getElementById('can');
-   		document.getElementById('inp_img').value = canvas.toDataURL();
    		var i = new Image();
    		i.src = canvas.toDataURL();
-   		document.getElementById('inp_img') = i;
+   		document.body.appendChild(i);
     }
     
     function findxy(res, e) {
@@ -85,23 +83,14 @@
     }
     </script>
 
-    <head>
-    	<title>Kannada Digit recoginition</title>
-    	<h1>Just write the digit. </h1>
-    	<h6>if you need help, <a href="#" value="click here" style='color: blue' onclick="document.getElementById('referenceImage').style.display='inline'">click here</a></h6>
-    </head>
-    
-    <body onload="init()">
-	    <form action="process_request" method="POST" onsubmit="getImage()" name="canvas">
-        	<canvas id="can" width="28" height="28" style="top:10%;left:10%;border:2px solid;"></canvas>
-        	<img id="canvasimg" style="top:10%;left:52%;" style="display:none;">
-	        <br>
-	        <!--<img src='' display='none' id='inp_img' name='imagefile'>-->
-	        <input type="hidden" value="" name="imagefile" id='inp_img'>
-	        <button type="submit" id="btn">Submit</button>
-	        <input type="button" value="clear" id="clr" size="23" onclick="erase()">
-	    </form>
-    	<img src='/static/reference_image.jpg' style='display: none' alt="reference_image" id='referenceImage'>
-    </body>
-    </html>
+	<head><title> This is a test page</title>
+	</head>
+	<body onload="init()">
+		<canvas id="can" width="280" height="280" style="top:10%;left:10%;border:2px solid;"></canvas>
+    	<img id="canvasimg" style="top:10%;left:52%;" style="display:none;">
+        <br>
+        <button onclick="getImage()">Submit</button>
+        <input type="button" value="clear" id="clr" size="23" onclick="erase()">
 
+	</body>
+</html>
