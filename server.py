@@ -44,4 +44,4 @@ def prediction():
     pr = m.predict(image)
     return render_template('result.html', prediction=str(pr), img="static/result.png?"+str(datetime.now()), original_img="static/{}.png?".format(pr)+str(datetime.now()))
 if __name__=='__main__':
-	app.run(debug=True)
+	app.run()
