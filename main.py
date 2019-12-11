@@ -34,5 +34,8 @@ class MODEL:
     ### load data and train model
     def predict(self,image):
         prediction = self.model.predict(image)
+        image = image.reshape((28,28))
+        im = Image.fromarray(image)
+        im.save("static/abc.png")
         return prediction
 
