@@ -43,4 +43,3 @@ def prediction():
     image = np.array(im)
     pr = m.predict(image)
     return render_template('result.html', prediction=str(pr), img="static/result.png?"+str(datetime.now()))
- 

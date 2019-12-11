@@ -6,6 +6,7 @@ Created on Fri Dec  6 12:51:43 2019
 """
 import tensorflow as tf
 graph = tf.get_default_graph()
+tf.logging.set_verbosity(tf.logging.ERROR)
 from keras.layers import LeakyReLU
 from keras.layers.normalization import BatchNormalization
 from keras.models import model_from_json
@@ -16,6 +17,8 @@ from keras.optimizers import RMSprop
 import keras
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import PIL
 
