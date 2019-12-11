@@ -1,8 +1,6 @@
 
 <html>
-    <head align="center">
-        <title>Kannada Digit recoginition</title>
-        <script type="text/javascript">
+    <script type="text/javascript">
             var canvas,ctx;
             var mouseX,mouseY,mouseDown=0;
             var touchX,touchY;
@@ -80,16 +78,16 @@
             }
             // old code
             function getImage() {
-                var canvas = document.getElementById('can');
+                var canvas = document.getElementById('sketchpad');
                 document.getElementById('inp_img').value = canvas.toDataURL();
                 var i = new Image();
                 i.src = canvas.toDataURL();
                 document.getElementById('inp_img') = i;
             }
             //
-        </script>
+    </script>
 
-        <style>
+    <style>
             #sketchpadapp {
                 -webkit-touch-callout: none;
                 -webkit-user-select: none;
@@ -120,25 +118,25 @@
                 background: #eee;
                 border: 1px solid #888;
             }
-        </style>
-</head>
+    </style>
 
-<body onload="init()" align="center">
-    <h1>Just write the digit. </h1>
-    <h6>if you need help, <a href="#" value="click here" style='color: blue' onclick="document.getElementById('referenceImage').style.display='inline'">click here</a></h6>
-
+    <head>
+    	<title>Kannada Digit recoginition</title>
+    	<h1>Just write the digit (one digit at a time). </h1>
+    	<img src='/static/reference_image.jpg' alt="reference_image" id='referenceImage'>
+    </head>
     
-    <form action="process_request" method="POST" onsubmit="getImage();" name="canvas">
-        <div id="sketchpadapp" align="center">
-            <canvas id="sketchpad" height="280" width="280" style=" border: 2px black solid"></canvas>
+    <body onload="init()" align="center">
+	    <form action="process_request" method="POST"  name="canvas" align="center">
+        
+            <canvas id="sketchpad" height="280" width="280" style="border: 2px black solid"></canvas>
             <br><br>
-            <input type="hidden" value="" name="imagefiels" id="inp_img">
-            <button type="submit" id="btn">Find Out the digit</button>
+            <input type="hidden" value="" name="imagefile" id="inp_img">
+            <button type="submit" id="btn" onclick="getImage();">Find Out the digit</button>
             &nbsp&nbsp&nbsp&nbsp&nbsp
             <input type="button" value="Clear the canvas" id="clr" size="23" onclick="clearCanvas(canvas,ctx);" >
-        </div>
-    </form>
-
-    <img src='/static/reference_image.jpg' style='display: none' alt="reference_image" id='referenceImage'>
-</body>
+        </form>
+        
+    	
+    </body>
 </html>
