@@ -127,30 +127,18 @@
     <h1>Just write the digit. </h1>
     <h6>if you need help, <a href="#" value="click here" style='color: blue' onclick="document.getElementById('referenceImage').style.display='inline'">click here</a></h6>
 
-    <div id="sketchpadapp" align="center">
-        <form action="process_request" method="POST" onsubmit="getImage();" name="canvas">
-            <canvas id="sketchpad" height="280" width="280" style="border: 2px black solid"></canvas>
+    
+    <form action="process_request" method="POST" onsubmit="getImage();" name="canvas">
+        <div id="sketchpadapp" align="center">
+            <canvas id="sketchpad" height="280" width="280" style=" border: 2px black solid"></canvas>
             <br><br>
             <input type="hidden" value="" name="imagefiels" id="inp_img">
-                <button type="submit" id="btn">Find Out the digit</button>
-                &nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="button" value="Clear the canvas" id="clr" size="23" onclick="clearCanvas(canvas,ctx);" >
-    </div>
+            <button type="submit" id="btn">Find Out the digit</button>
+            &nbsp&nbsp&nbsp&nbsp&nbsp
+            <input type="button" value="Clear the canvas" id="clr" size="23" onclick="clearCanvas(canvas,ctx);" >
+        </div>
+    </form>
+
+    <img src='/static/reference_image.jpg' style='display: none' alt="reference_image" id='referenceImage'>
 </body>
 </html>
-
-    <!--
-    <body>
-	    <form action="process_request" method="POST" onsubmit="getImage()" name="canvas">
-        	<canvas id="can" width="280" height="280" style="top:10%;left:10%;border:2px solid;"></canvas>
-        	<img id="canvasimg" style="top:10%;left:52%;" style="display:none;color: pink">
-	        <br>
-	        <img src='' display='none' id='inp_img' name='imagefile'>
-	        <input type="hidden" value="" name="imagefile" id='inp_img'>
-	        <button type="submit" id="btn">Submit</button>
-	        <input type="button" value="clear" id="clr" size="23" onclick="erase()">
-	    </form>
-    	<img src='/static/reference_image.jpg' style='display: none' alt="reference_image" id='referenceImage'>
-    </body>
-    </html>-->
-
