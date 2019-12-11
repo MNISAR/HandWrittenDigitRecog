@@ -22,8 +22,6 @@ import matplotlib.image as mpimg
 import numpy as np
 
 ## viewing the image from dataset
-df = pd.read_csv("t.csv")
-image = df.drop(['label'], axis=1).iloc[1].to_numpy().reshape((28,28))
 #for i in image:
 #	for j in i:
 #		print(j, end=' ')
@@ -35,6 +33,7 @@ image = base64.b64decode(string)
 #print(image)
 i = BytesIO(image)
 image = mpimg.imread(i, format='jpg')
+Image.fromarray(np.array(image)).save("static/result.png", format="png")
 im = Image.fromarray(np.array(image)[:,:,3])
 im.thumbnail((14,14))
 image = np.array(im)
