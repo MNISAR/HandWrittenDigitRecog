@@ -4,7 +4,8 @@
             var canvas,ctx;
             var mouseX,mouseY,mouseDown=0;
             var touchX,touchY;
-            function drawDot(ctx,x,y,size) {
+            var size = 6;
+            function drawDot(ctx,x,y) {
                 r=0; g=0; b=0; a=255;
                 ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
                 ctx.beginPath();
@@ -46,12 +47,12 @@
              }
             function sketchpad_touchStart() {
                 getTouchPos();
-                drawDot(ctx,touchX,touchY,12);
+                drawDot(ctx,touchX,touchY);
                 event.preventDefault();
             }   
             function sketchpad_touchMove(e) { 
                 getTouchPos(e);
-                drawDot(ctx,touchX,touchY,12); 
+                drawDot(ctx,touchX,touchY); 
                 event.preventDefault();
             }
             function getTouchPos(e) {
