@@ -36,7 +36,7 @@ def prediction():
     string = "".join(imagefile.split(",")[1:])
     image = base64.b64decode(string)
     image = mpimg.imread(BytesIO(image), format='jpg')
-    Image.fromarray(np.array(image)).save("static/result.png"), format="png")
+    Image.fromarray(np.array(image)).save("static/result.png", format="png")
     image = np.array(image)[:,:,3]
     im = Image.fromarray(image)
     im.thumbnail((28,28))
