@@ -12,7 +12,9 @@
                 ctx.closePath();
                 ctx.fill();
             } 
-            function clearCanvas(canvas,ctx) {
+            function clearCanvas() {
+                canvas = document.getElementById('sketchpad');
+                ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
             function sketchpad_mouseDown() {
@@ -134,7 +136,7 @@
             <input type="hidden" value="" name="imagefile" id="inp_img">
             <button type="submit" id="btn" onclick="getImage();">Find Out the digit</button>
             &nbsp&nbsp&nbsp&nbsp&nbsp
-            <input type="button" value="Clear the canvas" id="clr" size="23" onclick="clearCanvas(canvas,ctx);" >
+            <input type="button" value="Clear the canvas" id="clr" size="23" onclick="clearCanvas();" >
         </form>
         
     	
