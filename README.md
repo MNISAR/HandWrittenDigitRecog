@@ -3,7 +3,7 @@ Kaggle Kannad hand written digit reoginition
 
 Kannada is a language spoken predominantly by people of Karnataka in southwestern India. The language has roughly 45 million native speakers and is written using the Kannada script.
 
-![Kannada Digit set](https://github.com/MNISAR/HandWrittenDigitRecog/blob/master/static/reference_image.jpg)
+![Kannada Digit set](https://github.com/MNISAR/HandWrittenDigitRecog/blob/master/static/ref_image.jpg)
 
 This program aims to detect digit written Kannada script. 
 
